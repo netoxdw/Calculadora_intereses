@@ -5,7 +5,7 @@ def crear_tarjeta(nombre, card, tasa_interes, deuda_inicial, pago ):
     tarjeta ['Tarjeta'] = card
     tarjeta ['Tasa de interes'] = tasa_interes
     tarjeta ['Deuda total'] = deuda_inicial
-    tarjeta ['Monto a pagar'] = pago
+    tarjeta ['Pago mensual'] = pago
     return tarjeta
 
 # Solicitud de datos del cliente
@@ -15,7 +15,7 @@ card = input('Tipo de tarjeta: ')
 tasa_interes = float(input('Tasa de interes: '))
 deuda_inicial = int(input('Deuda inicial: '))
 # deuda_total = round(deuda_inicial * (1 + tasa_interes/100), 2)
-pago = int(input('Monto a pagar: '))
+pago = int(input('Pago mensual: '))
 
 
 if pago > deuda_inicial:
@@ -34,7 +34,18 @@ def captura_nueva_deuda (tarjeta):
 captura_nueva_deuda(tarjeta)
 nueva_deuda =  int(tarjeta['Nueva deuda'])
 
+# Funcion generar reporte
+def generar_reporte(tarjeta):
+    print('Reporte: ')
+    for i in tarjeta:
+        print(i, ':', tarjeta[i])
+generar_reporte(tarjeta)
+
+# Iterar varias tarjetas.
+
+
+# Funcion pago recurente
 def pago_recurente():
     for i in range(nueva_deuda, -1, -pago):
-        print(f'te restan {i} pesos')
-pago_recurente()
+        print(f'Te restan {i} pesos')
+# pago_recurente()
