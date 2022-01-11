@@ -1,4 +1,5 @@
 # Funcion crear tarjeta
+tarjetas = []
 tarjeta = {}
 def crear_tarjeta(nombre, card, tasa_interes, deuda_inicial, pago ):
     tarjeta ['Nombre'] = nombre
@@ -21,7 +22,7 @@ pago = int(input('Pago mensual: '))
 if pago > deuda_inicial:
     print('Pago mayor a deuda \n Por favor ingrese de nuevo los datos')
 else:
-    print(crear_tarjeta(nombre, card, tasa_interes, deuda_inicial, pago))
+    crear_tarjeta(nombre, card, tasa_interes, deuda_inicial, pago)
     print('Gracias por tu pago')
 
 # Funcion captura nueva deuda
@@ -29,7 +30,7 @@ def captura_nueva_deuda (tarjeta):
     deuda_recalculada = (deuda_inicial - pago)*(1 + (tasa_interes/12) / 100)
     tarjeta['Nueva deuda'] = deuda_recalculada
     for i in range(1):
-        print(tarjeta)
+        tarjeta
 
 captura_nueva_deuda(tarjeta)
 nueva_deuda =  int(tarjeta['Nueva deuda'])
@@ -41,11 +42,14 @@ def generar_reporte(tarjeta):
         print(i, ':', tarjeta[i])
 generar_reporte(tarjeta)
 
-# Iterar varias tarjetas.
+# Iterar con varias tarjetas.
 
 
 # Funcion pago recurente
 def pago_recurente():
     for i in range(nueva_deuda, -1, -pago):
         print(f'Te restan {i} pesos')
-# pago_recurente()
+pago_recurente()
+
+# Funcion multiples pagos al mes
+
